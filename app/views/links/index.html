@@ -1,0 +1,15 @@
+<h3>Links</h3>
+
+<h5>Import New Links</h5>
+<%= form_tag import_links_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>
+
+<ul class="links">
+  <% @links.each do |link| %>
+    <li>
+      <%= link_to link.source_url, link %>
+    </li>
+  <% end %>
+</ul>
